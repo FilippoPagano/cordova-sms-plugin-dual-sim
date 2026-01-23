@@ -38,8 +38,10 @@ var app = {
         var options = {
             replaceLineBreaks: false, // true to replace \n by a new line, false by default
             android: {
-                intent: 'INTENT'  // send SMS with the native android SMS messaging
+                intent: 'INTENT',  // send SMS with the native android SMS messaging
                 //intent: '' // send SMS without opening any other app, require : android.permission.SEND_SMS and android.permission.READ_PHONE_STATE
+                slot: '0' //slot 0 sim1 o slot 1 sim2
+
             }
         };
 
