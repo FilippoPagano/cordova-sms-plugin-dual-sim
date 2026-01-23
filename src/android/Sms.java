@@ -187,7 +187,7 @@ public class Sms extends CordovaPlugin {
 	private void send(final CallbackContext callbackContext, String phoneNumber, String message, String slot) {
 		SmsManager manager;
         int subscriptionId = getSubscriptionId(slot);
-        if (VERSION.SDK_INT < 22 || subscriptionId < 0) {
+        if (subscriptionId < 0) {
             manager = SmsManager.getDefault();
         } else {
             manager = SmsManager.getSmsManagerForSubscriptionId(subscriptionId);
