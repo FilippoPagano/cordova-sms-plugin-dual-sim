@@ -179,11 +179,6 @@ public class Sms extends CordovaPlugin {
                     i = subscriptionInfo.getSubscriptionId();
                 }
             }
-            // for (SubscriptionInfo subscriptionInfo : SubscriptionManager.from(this.cordova.getActivity()).getActiveSubscriptionInfoList()) {
-            //     if (parseInt == subscriptionInfo.getSimSlotIndex()) {
-            //         i = subscriptionInfo.getSubscriptionId();
-            //     }
-            // }
             return i;
         } catch (Exception e) {
             return -1;
