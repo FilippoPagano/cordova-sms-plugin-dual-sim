@@ -128,7 +128,6 @@ public class Sms extends CordovaPlugin {
 					}
 					return;
 				} catch (JSONException ex) {
-					LOG.i(LOG_TAG, "SMS error" + ex);
 					callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
 				}
 			}
