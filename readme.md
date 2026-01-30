@@ -40,7 +40,7 @@ var app = {
             android: {
                 intent: 'INTENT',  // send SMS with the native android SMS messaging
                 //intent: '' // send SMS without opening any other app, require : android.permission.SEND_SMS and android.permission.READ_PHONE_STATE
-                slot: '0' //slot 0 sim1 o slot 1 sim2
+                slot: '0' // optional parameter: use 0 for primary sim slot and 1 for secondary sim slot
 
             }
         };
@@ -94,6 +94,16 @@ Please go through all the [closed issues about this subject](https://github.com/
 #### Android: INTENT vs NO INTENT
 
 If sending a SMS is a core feature of your application and you would like to send a SMS with `options = { android: { intent: '' } }`, you need to fill [this form](https://docs.google.com/forms/d/e/1FAIpQLSexGxix-00xgnBhPLDvxwjbTcYqHB7enz-cQVJIY4zLuJpRtQ/viewform). If it is not a core feature of your application, you have to use `options = { android: { intent: 'INTENT' } }`. Please, read [this page](https://support.google.com/googleplay/android-developer/answer/9047303) to learn more.
+
+#### Android: slot
+Use `options.android.slot` to pick which SIM to use on dual‑SIM devices when sending with no intent.
+
+- `"0"`: primary SIM slot (default)
+- `"1"`: secondary SIM slot
+
+Notes:
+- Values are strings to match the Android API used by the plugin.
+
 
 #### When building my project for android I get the following error: `cannot find symbol: cordova.hasPermission(string)`
 
