@@ -179,11 +179,6 @@ public class Sms extends CordovaPlugin {
                     i = subscriptionInfo.getSubscriptionId();
                 }
             }
-            // for (SubscriptionInfo subscriptionInfo : SubscriptionManager.from(this.cordova.getActivity()).getActiveSubscriptionInfoList()) {
-            //     if (parseInt == subscriptionInfo.getSimSlotIndex()) {
-            //         i = subscriptionInfo.getSubscriptionId();
-            //     }
-            // }
             return i;
         } catch (Exception e) {
             return -1;
@@ -192,7 +187,7 @@ public class Sms extends CordovaPlugin {
 	private void send(final CallbackContext callbackContext, String phoneNumber, String message, String slot) {
 		SmsManager manager;
         int subscriptionId = getSubscriptionId(slot);
-        if (VERSION.SDK_INT < 22 || subscriptionId < 0) {
+        if (subscriptionId < 0) {
             manager = SmsManager.getDefault();
         } else {
             manager = SmsManager.getSmsManagerForSubscriptionId(subscriptionId);
