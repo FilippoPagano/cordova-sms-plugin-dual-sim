@@ -98,11 +98,12 @@ If sending a SMS is a core feature of your application and you would like to sen
 #### Android: slot
 Use `options.android.slot` to pick which SIM to use on dual‑SIM devices when sending with no intent.
 
-- `"0"`: primary SIM slot (default)
+- `"0"`: primary SIM slot
 - `"1"`: secondary SIM slot
 
 Notes:
 - Values are strings to match the Android API used by the plugin.
+- If no slot is specified the default sim slot will be used
 
 
 #### When building my project for android I get the following error: `cannot find symbol: cordova.hasPermission(string)`
